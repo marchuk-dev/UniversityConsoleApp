@@ -33,7 +33,7 @@ public class DepartmentService {
      * @throws DepartmentNotFoundException if no department is found with the given name.
      */
     public Department getByName(String departmentName) {
-        return departmentRepo.findByName(departmentName)
+        return departmentRepo.findByNameIgnoreCase(departmentName)
                 .orElseThrow(() -> new DepartmentNotFoundException(departmentName));
     }
 
@@ -104,10 +104,7 @@ public class DepartmentService {
                         Lector::getDegree,
                         Collectors.counting()
                 ));
-
-        statistics.setAssistans(degreeCounts.getOrDefault(Lector.Degree.ASSISTANT, 0L).intValue());
-        statistics.setAssociateProfessors(degreeCounts.getOrDefault(Lector.Degree.ASSOCIATE_PROFESSOR, 0L).intValue());
-        statistics.setProfessors(degreeCounts.getOrDefault(Lector.Degree.PROFESSOR, 0L).intValue());
+        statistics.setCountPerDegree(degreeCounts);
 
         return statistics;
     }

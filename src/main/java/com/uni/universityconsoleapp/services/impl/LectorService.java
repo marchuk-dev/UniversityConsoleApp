@@ -3,7 +3,6 @@ package com.uni.universityconsoleapp.services.impl;
 import com.uni.universityconsoleapp.entities.Department;
 import com.uni.universityconsoleapp.entities.Lector;
 import com.uni.universityconsoleapp.exceptions.LectorNotFoundException;
-import com.uni.universityconsoleapp.repositories.DepartmentRepository;
 import com.uni.universityconsoleapp.repositories.LectorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,7 +26,7 @@ public class LectorService {
      * @throws LectorNotFoundException if no lectors are found for the given department.
      */
     public List<Lector> getAllByDepartment(Department department) {
-        return lectorRepository.findByDepartment(department)
+        return lectorRepository.findByDepartments(department)
                 .orElseThrow(() -> new LectorNotFoundException(department));
     }
 

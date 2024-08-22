@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface LectorRepository extends JpaRepository<Lector, Long> {
-    Optional<List<Lector>> findByDepartment(Department department);
+    Optional<List<Lector>> findByDepartments(Department department);
 
     Optional<List<Lector>> findAllByNameContainingIgnoreCase(String name);
 }

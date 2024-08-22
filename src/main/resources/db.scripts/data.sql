@@ -19,25 +19,25 @@ INSERT INTO department (name, head) VALUES
 -- Insert lectors
 INSERT INTO lector (name, degree, salary) VALUES
                                               ('Alice Green', 'ASSISTANT', 50000),
-                                              ('Bob Brown', 'ASSOCIATE', 60000),
+                                              ('Bob Brown', 'ASSOCIATE_PROFESSOR', 60000),
                                               ('Carol Blue', 'PROFESSOR', 80000),
                                               ('David Red', 'ASSISTANT', 55000),
-                                              ('Emily White', 'ASSOCIATE', 62000),
+                                              ('Emily White', 'ASSOCIATE_PROFESSOR', 62000),
                                               ('Frank Black', 'PROFESSOR', 85000),
                                               ('Grace Grey', 'ASSISTANT', 53000),
-                                              ('Henry Gold', 'ASSOCIATE', 61000),
+                                              ('Henry Gold', 'ASSOCIATE_PROFESSOR', 61000),
                                               ('Irene Silver', 'PROFESSOR', 90000),
                                               ('Jack Orange', 'ASSISTANT', 51000),
-                                              ('Karen Pink', 'ASSOCIATE', 60000),
+                                              ('Karen Pink', 'ASSOCIATE_PROFESSOR', 60000),
                                               ('Leo Purple', 'PROFESSOR', 88000),
                                               ('Maria Cyan', 'ASSISTANT', 54000),
-                                              ('Nathan Brown', 'ASSOCIATE', 63000),
+                                              ('Nathan Brown', 'ASSOCIATE_PROFESSOR', 63000),
                                               ('Olivia Blue', 'PROFESSOR', 87000),
                                               ('Paul Green', 'ASSISTANT', 52000),
-                                              ('Quincy Yellow', 'ASSOCIATE', 64000),
+                                              ('Quincy Yellow', 'ASSOCIATE_PROFESSOR', 64000),
                                               ('Rita White', 'PROFESSOR', 86000),
                                               ('Sam Black', 'ASSISTANT', 55000),
-                                              ('Tina Grey', 'ASSOCIATE', 62500);
+                                              ('Tina Grey', 'ASSOCIATE_PROFESSOR', 62500);
 
 -- Insert department_lector relationships
 INSERT INTO department_lector (department_id, lector_id) VALUES
