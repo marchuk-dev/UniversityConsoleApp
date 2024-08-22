@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.dialect.PostgreSQLEnumJdbcType;
 
 import java.math.BigDecimal;
 import java.util.Set;
@@ -22,8 +24,9 @@ public class Lector {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "degree", insertable = false, updatable = false)
+    @JdbcType(PostgreSQLEnumJdbcType.class)
     private Degree degree;
 
     @Column(nullable = false)
@@ -37,7 +40,7 @@ public class Lector {
     )
     private Set<Department> departments;
 
-    enum Degree {
+    public enum Degree {
         ASSISTANT, ASSOCIATE, PROFESSOR
     }
 }
