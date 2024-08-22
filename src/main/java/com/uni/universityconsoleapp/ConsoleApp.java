@@ -17,6 +17,7 @@ public class ConsoleApp {
 
     public void run() {
         System.out.println("Welcome to the University Console App");
+        printInstructions();
         while (true) {
             System.out.print("> ");
             String input = scanner.nextLine();
@@ -26,4 +27,15 @@ public class ConsoleApp {
             commandDispatcher.dispatch(input);
         }
     }
+
+    private void printInstructions() {
+        System.out.println("Instructions:");
+        System.out.println("1. Who is head of department {department_name}");
+        System.out.println("2. Show {department_name} statistics");
+        System.out.println("3. Show the average salary for the department {department_name}");
+        System.out.println("4. Show count of employee for {department_name}");
+        System.out.println("5. Global search by {template}");
+        System.out.println("--------------------------------------------------");
+    }
+
 }

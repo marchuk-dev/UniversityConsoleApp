@@ -3,8 +3,8 @@ package com.uni.universityconsoleapp.command.impl;
 import com.uni.universityconsoleapp.command.AbstractCommand;
 import com.uni.universityconsoleapp.entities.Department;
 import com.uni.universityconsoleapp.entities.Lector;
-import com.uni.universityconsoleapp.services.impl.DepartmentService;
-import com.uni.universityconsoleapp.services.impl.LectorService;
+import com.uni.universityconsoleapp.services.DepartmentService;
+import com.uni.universityconsoleapp.services.LectorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -37,6 +37,7 @@ public class GlobalSearchCommand extends AbstractCommand {
         String result = formatResults(lectorResults, departmentResults);
 
         System.out.println(result);
+        printInstructions();
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.uni.universityconsoleapp.command.impl;
 
 import com.uni.universityconsoleapp.command.AbstractCommand;
-import com.uni.universityconsoleapp.services.impl.DepartmentService;
+import com.uni.universityconsoleapp.services.DepartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +19,7 @@ public class EmployeeCountCommand extends AbstractCommand {
         String requestValue = getFormattedRequest(input);
         int employeeCount = departmentService.getEmployeeCountByDepartmentName(requestValue);
         System.out.printf((RESPONSE_MESSAGE) + "%n", employeeCount);
+        printInstructions();
     }
 
     @Override

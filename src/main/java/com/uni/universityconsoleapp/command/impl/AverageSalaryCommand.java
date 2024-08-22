@@ -1,7 +1,7 @@
 package com.uni.universityconsoleapp.command.impl;
 
 import com.uni.universityconsoleapp.command.AbstractCommand;
-import com.uni.universityconsoleapp.services.impl.DepartmentService;
+import com.uni.universityconsoleapp.services.DepartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +21,7 @@ public class AverageSalaryCommand extends AbstractCommand {
         String requestValue = getFormattedRequest(input);
         BigDecimal averageSalary = departmentService.getAverageSalaryByDepartmentName(requestValue);
         System.out.printf((RESPONSE_MESSAGE) + "%n", requestValue, averageSalary);
+        printInstructions();
     }
 
     @Override

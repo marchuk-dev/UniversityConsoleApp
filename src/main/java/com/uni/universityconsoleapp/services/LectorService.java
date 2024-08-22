@@ -1,4 +1,4 @@
-package com.uni.universityconsoleapp.services.impl;
+package com.uni.universityconsoleapp.services;
 
 import com.uni.universityconsoleapp.entities.Department;
 import com.uni.universityconsoleapp.entities.Lector;

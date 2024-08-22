@@ -10,12 +10,12 @@ public interface Command {
     void execute(String input);
 
     /**
-     * Checks if the command should be executed based on the given input.
+     * Checks if the command might be executed based on the given input.
      *
      * @param input the input string to check.
      * @return true if the command can handle the input; false otherwise.
      */
-    boolean isExecuted(String input);
+    boolean canExecute(String input);
 
     /**
      * Provides the request message that this command listens for.
@@ -37,4 +37,18 @@ public interface Command {
      * with leading and trailing whitespace removed.
      */
     String getFormattedRequest(String input);
+
+    /**
+     * Prints the instructions for user input to the console.
+     * This method provides guidance on how to format various types of requests that the application can handle.
+     * The instructions include:
+     * - How to request the head of a department.
+     * - How to request statistics for a department.
+     * - How to request the average salary for a department.
+     * - How to request the count of employees in a department.
+     * - How to perform a global search by a template.
+     * <p>
+     * The printed instructions are framed with lines of dashes for better visibility.
+     */
+    void printInstructions();
 }

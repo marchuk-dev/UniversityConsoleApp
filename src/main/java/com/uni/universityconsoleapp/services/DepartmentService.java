@@ -1,4 +1,4 @@
-package com.uni.universityconsoleapp.services.impl;
+package com.uni.universityconsoleapp.services;
 
 import com.uni.universityconsoleapp.dto.DepartmentStatistics;
 import com.uni.universityconsoleapp.entities.Department;

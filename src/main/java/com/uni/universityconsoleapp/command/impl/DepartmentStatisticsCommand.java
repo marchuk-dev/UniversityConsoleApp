@@ -2,9 +2,12 @@ package com.uni.universityconsoleapp.command.impl;
 
 import com.uni.universityconsoleapp.command.AbstractCommand;
 import com.uni.universityconsoleapp.dto.DepartmentStatistics;
-import com.uni.universityconsoleapp.services.impl.DepartmentService;
+import com.uni.universityconsoleapp.services.DepartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.uni.universityconsoleapp.entities.Lector.Degree.*;
 
@@ -22,11 +25,34 @@ public class DepartmentStatisticsCommand extends AbstractCommand {
         String requestValue = getFormattedRequest(input);
         DepartmentStatistics statistics = departmentService.getStatisticsByDepartmentName(requestValue);
         System.out.println(formatResults(statistics));
+        printInstructions();
     }
 
     @Override
     public String getRequestMessage() {
         return REQUEST_MESSAGE;
+    }
+
+    @Override
+    public boolean canExecute(String input) {
+        String regex = "Show\\s+.*\\s+statistics";
+        return input.toLowerCase().matches(regex.toLowerCase());
+    }
+
+    @Override
+    public String getFormattedRequest(String input) {
+        String regex = "Show\\s+(.*?)\\s+statistics";
+        Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(input);
+
+        if (matcher.find()) {
+            return matcher.group(1).trim();
+        } else {
+            System.err.println("Input: " + input);
+            System.err.println("Regex: " + regex);
+            throw new IllegalArgumentException("Invalid input format.");
+        }
+
     }
 
     private String formatResults(DepartmentStatistics statistics) {

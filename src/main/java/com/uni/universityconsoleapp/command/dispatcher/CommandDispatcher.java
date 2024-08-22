@@ -1,6 +1,8 @@
 package com.uni.universityconsoleapp.command.dispatcher;
 
 import com.uni.universityconsoleapp.command.Command;
+import com.uni.universityconsoleapp.exceptions.DepartmentNotFoundException;
+import com.uni.universityconsoleapp.exceptions.LectorNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +16,13 @@ public class CommandDispatcher {
 
     public void dispatch(String input) {
         for (Command command : commands) {
-            if (command.isExecuted(input)) {
-                command.execute(input);
+            if (command.canExecute(input)) {
+                try {
+                    command.execute(input);
+                } catch (LectorNotFoundException | DepartmentNotFoundException exception) {
+                    System.out.println(exception.getMessage());
+                }
+
                 return;
             }
         }
