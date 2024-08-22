@@ -1,1 +1,5 @@
-spring.application.name=UniversityConsoleApp
+spring:
+  jpa:
+    properties:
+      hibernate:
+        check_nullability: true
