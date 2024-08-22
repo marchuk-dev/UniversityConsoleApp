@@ -38,17 +38,4 @@ public interface Command {
      */
     String getFormattedRequest(String input);
 
-    /**
-     * Prints the instructions for user input to the console.
-     * This method provides guidance on how to format various types of requests that the application can handle.
-     * The instructions include:
-     * - How to request the head of a department.
-     * - How to request statistics for a department.
-     * - How to request the average salary for a department.
-     * - How to request the count of employees in a department.
-     * - How to perform a global search by a template.
-     * <p>
-     * The printed instructions are framed with lines of dashes for better visibility.
-     */
-    void printInstructions();
 }
