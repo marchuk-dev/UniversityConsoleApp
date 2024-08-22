@@ -41,6 +41,8 @@ public class Lector {
     private Set<Department> departments;
 
     public enum Degree {
-        ASSISTANT, ASSOCIATE, PROFESSOR
+        ASSISTANT,
+        ASSOCIATE_PROFESSOR,
+        PROFESSOR
     }
 }
