@@ -21,7 +21,6 @@ public class AverageSalaryCommand extends AbstractCommand {
         String requestValue = getFormattedRequest(input);
         BigDecimal averageSalary = departmentService.getAverageSalaryByDepartmentName(requestValue);
         System.out.printf((RESPONSE_MESSAGE) + "%n", requestValue, averageSalary);
-        printInstructions();
     }
 
     @Override

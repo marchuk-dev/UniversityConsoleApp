@@ -25,7 +25,6 @@ public class DepartmentStatisticsCommand extends AbstractCommand {
         String requestValue = getFormattedRequest(input);
         DepartmentStatistics statistics = departmentService.getStatisticsByDepartmentName(requestValue);
         System.out.println(formatResults(statistics));
-        printInstructions();
     }
 
     @Override

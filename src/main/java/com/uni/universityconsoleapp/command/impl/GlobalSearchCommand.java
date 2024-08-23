@@ -37,7 +37,6 @@ public class GlobalSearchCommand extends AbstractCommand {
         String result = formatResults(lectorResults, departmentResults);
 
         System.out.println(result);
-        printInstructions();
     }
 
     @Override

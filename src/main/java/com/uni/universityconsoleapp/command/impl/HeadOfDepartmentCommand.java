@@ -20,7 +20,6 @@ public class HeadOfDepartmentCommand extends AbstractCommand {
         String requestValue = getFormattedRequest(input);
         Department department = departmentService.getByName(requestValue);
         System.out.printf((RESPONSE_MESSAGE) + "%n", department.getName(), department.getHead());
-        printInstructions();
     }
 
     @Override

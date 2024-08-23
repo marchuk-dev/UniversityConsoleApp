@@ -19,7 +19,6 @@ public class EmployeeCountCommand extends AbstractCommand {
         String requestValue = getFormattedRequest(input);
         int employeeCount = departmentService.getEmployeeCountByDepartmentName(requestValue);
         System.out.printf((RESPONSE_MESSAGE) + "%n", employeeCount);
-        printInstructions();
     }
 
     @Override
